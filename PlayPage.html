@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<title>PlayPage</title>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    //setting Name from Url usong Url Decoder Search
+    var Name = decodeURIComponent(window.location.search);
+    Name = Name.substring(1);
+    $("#Name").text("Player Name : "+ Name);
+    //Setting Battry LifY
+    var battryLife =3;
+    $("#btryLife").text("Life Remains: " + battryLife)
+
+    //Assign Image Randomely one image to Question image holder
+    let slideImages = ['Tiger.jpg','dog.jpg','Lion.jpg','elephant.jpg','peacock.jpg']  
+    for(var j, x, i = slideImages.length; i;j = parseInt(Math.random() * i), 
+    x = slideImages[--i],slideImages[j] = x);
+       {
+        document.getElementById("QesImg").src= x;
+        //console.log(imgTitle);  
+       } 
+    //Assign image title to figcation
+    var imgTitle = $('#QesImg').attr('src');
+    imgTitle=imgTitle.slice(0, -4);
+    $('#imgTitle').text(imgTitle);
+
+    //Assign Image to all Li  randomly
+    $("ul li").each(function(){
+       
+            console.log(i);
+        
+    });
+    for (var i = 0; i < slideImages.length; i++){
+    document.querySelectorAll('li').src = slideImages[i];
+    console.log(is)
+}
+});
+</script>
+<style>
+    .header
+    {
+        border-bottom: 1px solid grey;
+
+    }
+    .GameContainer
+    {
+        border: 1px  black;
+    }
+    ul li
+    {
+        list-style: none;
+        display: inline;
+        padding: 5px;
+    }
+    #imgTitle
+    {
+        text-transform: uppercase;
+    }
+    .ansimg
+    {
+        width:15%;
+        
+    }
+</style>
+</head>
+<body>
+<div class="main">
+    <div class="container" style="text-align:center;">
+        <div class="header">
+            <h1>Welcome to Game World</h1>
+            <h4 id="Name"></h4>
+            <h4 id="btryLife"></h4>
+        </div>
+    </div><br>
+    <div class="GameContainer container" style="text-align: center">
+        <div>
+            <p class="CaptionText">
+                Please find below image by selecting  the image in answer option.
+            </p>
+            <figure>
+                <img src="" class="img-thumbnail img-responsive" id="QesImg"/>
+                    <figcaption id="imgTitle"></figcaption>
+            </figure>
+        </div>
+        <div class="ansOption container" style="text-align: center">
+            <h4>Answer Option</h4></br>
+            <ul class="imgContainer" style="display: inline">
+                <li id="Img1"><img src="tiger.jpg" class="img-thumbnail img-responsive ansimg"></li>
+                <li id="Img2"><img src="tiger.jpg" class="img-thumbnail img-responsive ansimg"></li>
+                <li id="Img3"><img src="tiger.jpg" class="img-thumbnail img-responsive ansimg"></li>
+                <li id="Img4"><img src="tiger.jpg" class="img-thumbnail img-responsive ansimg"></li>
+                <li id="Img5"><img src="tiger.jpg" class="img-thumbnail img-responsive ansimg"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

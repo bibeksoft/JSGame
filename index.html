@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<title>Game APP</title>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+function sendName(){
+    var Name;
+    Name=document.getElementById("Name").value;
+    var QueryString="?" + Name;
+    window.location.href="PlayPage.html" + QueryString;
+}
+</script>
+<style>
+    body
+    {
+        background:#191b1b;
+        color: white;
+    }
+    #Name{
+        color:Black;
+    }
+</style>
+</head>
+<body>
+<div class="container" style="text-align: center;">
+        <h3>Welcome to Game Paradise</h3>
+        <hr>
+        <div class="form-group">
+            <lable for="Name" class="control-label">Player Name</lable>
+            <input id="Name" class="input-sg"placeholder="Enter Player Name"><br><br>
+            <button class="btn btn-success" onclick="sendName();">Start</button>
+        </div>
+</div>
+</body>
+</html>
