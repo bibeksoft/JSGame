@@ -32,14 +32,24 @@ $(function(){
     var ul = document.querySelector('ul');
     for (var i = ul.children.length; i >= 0; i--) {
         ul.appendChild(ul.children[Math.random() * i | 0]);
-    }
+    }   
+    //li click image
+    $('ul li').find(".ansimg").click(function(){
+            var imgTitle2 = $(this).attr('src');
+            imgTitle2=imgTitle2.slice(0, -4);
+            if(imgTitle==imgTitle2)
+            {
+                $(this).css('background-color','Green')
+                alert('Congrats');
+            }
+            
+    });   
 });
 </script>
 <style>
     .header
     {
         border-bottom: 1px solid grey;
-
     }
     .GameContainer
     {
@@ -59,6 +69,7 @@ $(function(){
     {
         width:15%;
         max-height: 100px;
+        filter: invert(1);
         
     }
 </style>
