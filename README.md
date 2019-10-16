@@ -1,2 +1,2 @@
 # JSGame
-Image Selection Using Javascript
+Simple javascript game for my 10 months old daughter.
